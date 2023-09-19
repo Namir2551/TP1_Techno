@@ -34,16 +34,31 @@ void afficherTab( int *tab, int taille ){
 }
 
 bool egalite( int tab1[ ], int tab2[ ], int taille ){
-
+    int i = 0;
+    while (i < taille)
+    {
+        if (tab1[i] != tab2[i])
+        {
+            return false;
+        }
+        i++;
+    }
+    return true;
 }
 
 bool egalitePtr( int *tab1, int *tab2, int taille ){
-
+    int i = 0;
+    while (i < taille)
+    {
+        if (*(tab1 + i) != *(tab2 + i))
+        {
+            return false;
+        }
+        i++;
+    }
+    return true;
 }
 
 int * concatenerTab( int *tab1, int *tab2, int taille ){
 
 }
-
-
-
