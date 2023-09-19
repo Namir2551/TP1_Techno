@@ -1,7 +1,7 @@
 
 #include <iostream>
 
-
+using namespace std;
 // appele des methodes 
 void trierTab(int*tab, int taille);
 void afficherTab( int *tab, int taille );
@@ -16,6 +16,80 @@ int main(){
     int tableau1[] = {22, 44, 12, 61, 4, 99, 33, 17, 15, 123};
     int tableau2[] = {22, 33, 44, 61, 4, 99, 12, 17, 123, 15};
     int tableau3[] = {22, 44, 12, 61, 4, 99, 33, 17, 15, 123};
+
+
+
+    int *tableauConcat = concatenerTab(tableau1,tableau2,NB_ELEMENTS);
+    afficherTab(tableau1,NB_ELEMENTS);
+    afficherTab(tableau2,NB_ELEMENTS);
+    afficherTab(tableau3,NB_ELEMENTS);
+    afficherTab(tableauConcat,NB_ELEMENTS * 2);
+
+
+
+    
+    
+    if(egalite(tableau1,tableau2,NB_ELEMENTS)){ // true
+        cout<<"Le tableau 1 est egale au tableau 2"<<endl;
+    }else
+    {
+        cout<<"Le tableau 1 N'EST PAS EGALE au tableau 2"<< endl;
+    }
+
+    if(egalite(tableau1,tableau3,NB_ELEMENTS)){ // true
+        cout<<"Le tableau 1 est egale au tableau 3"<<endl;
+    }else
+    {
+        cout<<"Le tableau 1 N'EST PAS EGALE au tableau 3"<< endl;
+    }
+
+
+    if(egalitePtr(tableau1,tableau2,NB_ELEMENTS)){ // true
+        cout<<"Le pointeur Tab 1 est egale au pointeur Tab 2"<<endl;
+    }else
+    {
+        cout<<"Le pointeur Tab 1 N'EST PAS EGALE au pointeur Tab 2"<< endl;
+    }
+
+
+    if(egalitePtr(tableau1,tableau3,NB_ELEMENTS)){ // true
+        cout<<"Le pointeur Tab 1 est egale au pointeur Tab 3"<<endl;
+    }else
+    {
+        cout<<"Le pointeur Tab 1 N'EST PAS EGALE au pointeur Tab 3"<< endl;
+    }
+    
+
+    trierTab(tableau1,NB_ELEMENTS);
+    trierTab(tableau2,NB_ELEMENTS);
+    trierTab(tableau3,NB_ELEMENTS);
+    trierTab(tableauConcat,NB_ELEMENTS);
+
+
+    // **************Attention ICI****************
+    afficherTab(tableau1,NB_ELEMENTS);
+    afficherTab(tableau2,NB_ELEMENTS);
+    afficherTab(tableau3,NB_ELEMENTS);
+    afficherTab(tableauConcat,NB_ELEMENTS * 2);
+
+    if(egalitePtr(tableau1,tableau2,NB_ELEMENTS)){ // true
+        cout<<"Le pointeur Tab 1 est egale au pointeur Tab 2"<<endl;
+    }else
+    {
+        cout<<"Le pointeur Tab 1 N'EST PAS EGALE au pointeur Tab 2"<< endl;
+    }
+
+
+    if(egalitePtr(tableau1,tableau3,NB_ELEMENTS)){ // true
+        cout<<"Le pointeur Tab 1 est egale au pointeur Tab 3"<<endl;
+    }else
+    {
+        cout<<"Le pointeur Tab 1 N'EST PAS EGALE au pointeur Tab 3"<< endl;
+    }
+
+
+
+    
 
 
     return 0;
