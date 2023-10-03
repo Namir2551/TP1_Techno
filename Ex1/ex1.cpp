@@ -23,11 +23,9 @@ int main(){
     afficherTab(tableau1,NB_ELEMENTS);
     afficherTab(tableau2,NB_ELEMENTS);
     afficherTab(tableau3,NB_ELEMENTS);
+    //std::cout<<"Tableau concat"<<tableauConcat<<endl;
     afficherTab(tableauConcat,NB_ELEMENTS * 2);
 
-
-
-    
     
     if(egalite(tableau1,tableau2,NB_ELEMENTS)){ // true
         cout<<"Le tableau 1 est egale au tableau 2"<<endl;
@@ -63,10 +61,10 @@ int main(){
     trierTab(tableau1,NB_ELEMENTS);
     trierTab(tableau2,NB_ELEMENTS);
     trierTab(tableau3,NB_ELEMENTS);
-    trierTab(tableauConcat,NB_ELEMENTS);
+    trierTab(tableauConcat,NB_ELEMENTS*2);
 
 
-    // **************Attention ICI****************
+    
     afficherTab(tableau1,NB_ELEMENTS);
     afficherTab(tableau2,NB_ELEMENTS);
     afficherTab(tableau3,NB_ELEMENTS);
@@ -98,26 +96,23 @@ int main(){
 
 // ========== methode ===========
 
-void trierTab(int*tab, int taille){
-    int i = 0;
-    int j = 0;
-    while (i < taille - 1) {
-        while (j < taille - i - 1) {
-            if (tab[j] > tab [j + 1]) {
+void trierTab(int* tab, int taille) {
+    for (int i = 0; i < taille - 1; i++) {
+        for (int j = 0; j < taille - i - 1; j++) {
+            if (tab[j] > tab[j + 1]) {
                 int temp = tab[j];
-                tab[j] = tab [j + 1];
+                tab[j] = tab[j + 1];
                 tab[j + 1] = temp;
             }
-            j++;
         }
-        i++;
     }
 }
+
 
 void afficherTab(int *tab, int taille ){
     std::cout << "tableau contient: ";
     for (int i = 0; i < taille; i++) {
-        std::cout <<tab;
+        std::cout <<*tab;
 
         if(i < taille -1){
             std::cout<<" , ";
@@ -162,8 +157,13 @@ int * concatenerTab( int *tab1, int *tab2, int taille ){
         tab[i] = tab1[i];
         i++;
     }
+    int u  = 0;
     while(i < taille * 2) {
-        tab[i] = tab2[i];
+        tab[i] = tab2[u];
         i++;
+        u++;
     }
+
+    return tab;
+    
 }
